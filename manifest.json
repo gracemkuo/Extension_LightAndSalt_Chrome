@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "LightAndSalt",
+  "description": "Read the Bible and get inspired everyday.",
+  "author": "Grace Marie Kuo",
+  "version": "1.0",
+  "action": {
+    "default_icon": "/icons/16.png",
+    "default_title": "Light and Salt"
+    
+    
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "webNavigation",
+    "idle",
+    "webNavigation",
+    "unlimitedStorage"
+    
+  ],
+  "content_scripts": 
+  [
+      {
+          "matches": ["*://*/*","<all_urls>"],  
+          "js": ["packages/jquery-3.5.0.min.js","table.js"]
+      }
+  ],
+  
+  "background":  {
+        "service_worker": "background.js"
+      } 
+}
